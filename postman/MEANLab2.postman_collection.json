@@ -1,0 +1,215 @@
+{
+  "info": {
+    "_postman_id": "49b9d461-e363-4217-bb3d-c2e669421dc1",
+    "name": "MEANLab2",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Home Page",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000"
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Login",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/users/login",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["users", "login"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Register",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/users/register",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["users", "register"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Leagues",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/leagues",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["leagues"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Leagues JSON",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/leagues/data",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["leagues", "data"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "POST Register - Success",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "name": "Content-Type",
+            "type": "text",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "username",
+              "value": "BizBaz",
+              "description": "username not yet created.",
+              "type": "text"
+            },
+            {
+              "key": "password",
+              "value": "password123",
+              "type": "text"
+            },
+            {
+              "key": "email",
+              "value": "bizbaz@bizbaz.com",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:3000/users/register",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["users", "register"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "POST Register - Failure",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/users/register",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["users", "register"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "POST Login - Success",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "username",
+              "value": "FooBar",
+              "type": "text"
+            },
+            {
+              "key": "password",
+              "value": "password123",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:3000/users/login",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["users", "login"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "POST Login - Failure",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "username",
+              "value": "FooBar",
+              "type": "text"
+            },
+            {
+              "key": "password",
+              "value": "password12",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:3000/users/login",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["users", "login"]
+        }
+      },
+      "response": []
+    }
+  ]
+}

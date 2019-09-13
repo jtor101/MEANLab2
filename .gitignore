@@ -1,0 +1,12 @@
+# System Files
+.DS_Store
+Thumbs.db
+
+# IDEs
+.vscode/
+
+# dependencies
+node_modules/
+
+# dotenv
+.env
