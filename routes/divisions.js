@@ -2,8 +2,8 @@ var express = require("express");
 var router = express.Router();
 var fs = require("fs");
 
-/* GET leagues page. */
-// http://localhost:3000/leagues
+/* GET Divisions page. */
+// http://localhost:3000/divisions
 router.get("/", function(req, res, next) {
   res.render("divisions");
 });
@@ -28,22 +28,20 @@ router.get("/leagues/data", function(req, res, next) {
   }
 });
 
-router.get("teams/data/:id", function(req, res) {
+// GET MANY TEAMS BY LEAGUE
+router.get("/teams/data/:id", function(req, res) {
   let id = req.params.id;
-  console.log("Received a GET request for team " + id);
+  console.log("Received a GET request for teams in league " + id);
 
-  let data = fs.readFileSync(__dirname + "./data/teams.json", "utf8");
+  let data = fs.readFileSync(__dirname + "/data/teams.json", "utf8");
   data = JSON.parse(data);
 
-  let match = getMatchingTeamById(id, data);
-  if (match == null) {
-    res.status(404).send("Not Found");
-    return;
-  }
+  // find the matching teams for
+  let matches = getMatchingTeamsByLeague(id, data);
 
   //console.log("Returned data is: ");
-  //logOneTeam(match);
-  res.end(JSON.stringify(match));
+  //logArrayOfTeams(matches);
+  res.end(JSON.stringify(matches));
 });
 
 module.exports = router;

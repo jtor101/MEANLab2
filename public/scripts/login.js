@@ -36,10 +36,16 @@ $(function() {
     let isOk = inputVal();
     if (isOk == false) {
       return;
-    } else {
-      $.post("http://localhost:3000/users/login", data, function() {
-        location.href = "../divisions";
-      });
     }
+    $.post("http://localhost:3000/users/login", data, function() {})
+      .done(function(res) {
+        location.href = "../divisions";
+      })
+      .fail(function(e) {
+        if (e.status === 403) {
+          $("#loginError").text("Invalid credentials");
+          $("#loginError").show();
+        }
+      });
   });
 });
