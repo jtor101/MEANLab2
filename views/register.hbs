@@ -1,2 +1,82 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+<!DOCTYPE html>
+<html lang="en">
+
+{{> head}}
+
+<body class="container-fluid" id="nslbody">
+    {{> header}}
+    <nav>
+        <ul class="nav justify-content-center" id="navlist">
+            <li class="nav-item" id="navhome">
+                <a class="nav-link text-reset" href="/">Home</a>
+            </li>
+            <li class="nav-item" id="nav1">
+                <a class="nav-link text-reset" href="./login">Login</a>
+            </li>
+            <li class="nav-item" id="nav2">
+                <a class="nav-link text-reset" href="./register">Register</a>
+            </li>
+            <li class="nav-item dropdown" id="nav3">
+                <!-- Theme Picker -->
+                <a class="nav-link dropdown-toggle text-reset" data-toggle="dropdown" href="#" role="button"
+                    aria-haspopup="true" aria-expanded="false">Theme Settings</a>
+                <div class="dropdown-menu px-3">
+                    <!-- Light Theme -->
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="themeRadios" id="lightRadio"
+                            value="lightTheme" />
+                        <label class="form-check-label" for="lightRadio" id="lightRadioLabel">
+                            Light theme
+                        </label>
+                    </div>
+                    <!-- Dark Theme -->
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="themeRadios" id="darkRadio"
+                            value="darkTheme" />
+                        <label class="form-check-label" for="darkRadio" id="darkRadioLabel">
+                            Dark theme
+                        </label>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </nav>
+
+    <main class="row">
+
+        <form class="col-6 offset-3 py-5" name="regform" id="regform">
+            <div class="form-group">
+                <label for="bandusername" id="bandusernamelabel">Username: </label>
+                <input type="text" class="form-control" id="bandusername" name="username" placeholder="Enter username">
+                <div id="usernameError" class="errorMsg mt-2"></div>
+            </div>
+            <div class="form-group">
+                <label for="banduserpassword" id="banduserpasswordlabel">Password: </label>
+                <input type="password" class="form-control" id="banduserpassword" name="password"
+                    placeholder="Enter Password">
+                <div id="passwordError" class="errorMsg mt-2"></div>
+            </div>
+            <div class="form-group">
+                <label for="banduserpasswordconf" id="banduserpasswordconflabel">Confirm Password: </label>
+                <input type="password" class="form-control" id="banduserpasswordconf" name="passwordconf"
+                    placeholder="Confirm Password">
+                <div id="passwordconfError" class="errorMsg mt-2"></div>
+            </div>
+            <div class="form-group">
+                <label for="banduseremail" id="banduseremaillabel">Email: </label>
+                <input type="email" class="form-control" id="banduseremail" name="email" placeholder="Enter Email">
+                <div id="emailError" class="errorMsg mt-2"></div>
+            </div>
+
+            <button type="submit" class="btn btn-primary" id="loginSubmit">Submit</button>
+            <div id="infoError" class="errorMsg mt-2"></div>
+        </form>
+
+    </main>
+
+    {{> footer}}
+    {{> scripts}}
+    <script src="/scripts/register.js"></script>
+</body>
+
+</html>

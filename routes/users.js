@@ -21,8 +21,10 @@ router.post("/login", function(req, res, next) {
   var password = req.body.password;
   // Authorize login
   if (users.authUser(username, password)) {
+    req.session.username = username;
     res.statusCode = 200;
   } else {
+    req.session.username = null;
     res.statusCode = 403;
   }
   res.end();

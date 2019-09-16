@@ -1,0 +1,65 @@
+body {
+  font-family: "Gentium Book Basic", serif;
+}
+
+/* Sets border and background-color to light theme */
+#nslfoot,
+#contentArea1,
+#contentArea2,
+#contentArea3,
+#divisionArea1,
+#divisionArea2,
+.card,
+#cardHeading,
+#teamTable,
+#memberInfo,
+#registerArea1,
+#registerTeam,
+#registerMember,
+#editTeam,
+#editMode {
+  border: 1px ridge black;
+  border-radius: 8px;
+  background-color: lightgrey;
+}
+
+#headerBg {
+  border: 1px ridge black;
+  border-radius: 8px;
+  background-image: url(/images/shredlight.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+/* Controls section text size */
+#contentArea1 h1,
+#contentArea2 h1,
+#contentArea3 h1,
+#divisionArea1 h1,
+#divisionArea2 h1,
+#cardHeading {
+  font-size: 2em;
+}
+
+/* Team Details Card heading size */
+.card h4 {
+  font-size: 1.8em;
+}
+
+/* Edit Mode size */
+#editMode {
+  font-size: 2em;
+}
+
+/* Theme picker radio button label size */
+#themePick {
+  font-size: 0.8em;
+}
+
+.errorMsg {
+  color: red;
+  text-align: center;
+  background-color: white;
+  border: 2px solid black;
+}

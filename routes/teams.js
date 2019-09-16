@@ -6,7 +6,15 @@ var fs = require("fs");
 // http://localhost:3000/leagues/data
 router.get("/data", function(req, res, next) {
   try {
-    res.end(fs.readFileSync("./data/leagues.json"));
+    res.end(fs.readFileSync("./data/teams.json"));
+  } catch (err) {
+    res.end("[]");
+  }
+});
+
+router.get("/data/byleague", function(req, res, next) {
+  try {
+    res.end(fs.readFileSync("./data/teams.json"));
   } catch (err) {
     res.end("[]");
   }
