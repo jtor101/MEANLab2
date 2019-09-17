@@ -24,6 +24,13 @@ $(function() {
   function catFillCard() {
     $.getJSON("/teams/data", function(data) {
       let teams = data;
+
+      function sortTeams(teams) {
+        teams.filter(function(teams) {
+          teams.League == $("#divisionSel").val();
+        });
+      }
+
       $(".card").empty(); // Clears card of previous selection.
       $("#divisionArea3").show();
 
@@ -87,13 +94,13 @@ $(function() {
         $("#team" + teams[i].TeamId).on("click", function() {
           confirm("Are you sure you want to delete this band?");
           $.ajax({
-            url: "/http://localhost:3000/data/teams/" + teams[i].TeamId,
+            url: "/teams/data/" + teams[i].TeamId,
             method: "DELETE",
             success: function() {
               alert("Updated!");
             }
           });
-          location.href = "divisions.php";
+          location.href = "divisions";
         });
       }
     });
