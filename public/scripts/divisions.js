@@ -5,7 +5,7 @@ $(function() {
   $("#divisionArea3").hide();
 
   // Populates dropdown with leagues.
-  $.getJSON("/http://localhost:3000/leagues/data", function(data) {
+  $.getJSON("/leagues/data", function(data) {
     let leagues = data;
 
     for (let i = 0; i < leagues.length; i++) {
@@ -22,7 +22,7 @@ $(function() {
 
   // Begin catFillCard
   function catFillCard() {
-    $.getJSON("/teams/data/" + $("#divisionSel").val(), function(data) {
+    $.getJSON("/teams/data", function(data) {
       let teams = data;
       $(".card").empty(); // Clears card of previous selection.
       $("#divisionArea3").show();

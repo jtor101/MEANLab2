@@ -29,7 +29,7 @@ router.get("/leagues/data", function(req, res, next) {
 });
 
 // GET MANY TEAMS BY LEAGUE
-router.get("/teams/data/:id", function(req, res) {
+router.get("/teams/data/byleague/:id", function(req, res) {
   let id = req.params.id;
   console.log("Received a GET request for teams in league " + id);
 
@@ -39,9 +39,24 @@ router.get("/teams/data/:id", function(req, res) {
   // find the matching teams for
   let matches = getMatchingTeamsByLeague(id, data);
 
-  //console.log("Returned data is: ");
+  console.log("Returned data is: ");
   //logArrayOfTeams(matches);
   res.end(JSON.stringify(matches));
+});
+
+// GET ONE TEAM BY ID
+router.get("/teams/data/:id", function(req, res) {
+  let id = req.params.id;
+  console.log("Received a GET request for team " + id);
+
+  let data = fs.readFileSync(__dirname + "/data/teams.json", "utf8");
+  data = JSON.parse(data);
+
+  let match = getMatchingTeamById(id, data);
+  if (match == null) {
+    res.status(404).send("Not Found");
+    return;
+  }
 });
 
 module.exports = router;
